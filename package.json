@@ -115,15 +115,6 @@
   "resolutions": {
     "@types/mime": "3.0.4"
   },
-  "workspaces": [
-    "examples/expo",
-    "examples/macos",
-    "examples/win",
-    "examples/bare",
-    "examples/tv",
-    "examples/vision",
-    "docs"
-  ],
   "packageManager": "yarn@3.6.4",
   "engines": {
     "node": ">= 18.0.0"
