@@ -73,23 +73,6 @@ declare const UnistylesRegistry: {
     };
 };
 declare const UnistylesRuntime: import("./core").UnistylesRuntime;
-export {
-    mq,
-    useStyles,
-    UnistylesProvider,
-    useInitialTheme,
-    createStyleSheet,
-    ScreenOrientation,
-    AndroidContentSizeCategory,
-    IOSContentSizeCategory,
-    UnistylesRegistry,
-    UnistylesRuntime,
-};
-export type {
-    UnistylesThemes,
-    UnistylesBreakpoints,
-    UnistylesPlugin,
-    UnistylesValues,
-    ExtractVariantNames as UnistylesVariants,
-};
+export { mq, useStyles, useInitialTheme, UnistylesProvider, createStyleSheet, ScreenOrientation, AndroidContentSizeCategory, IOSContentSizeCategory, UnistylesRegistry, UnistylesRuntime, };
+export type { UnistylesThemes, UnistylesBreakpoints, UnistylesPlugin, UnistylesValues, ExtractVariantNames as UnistylesVariants, };
 //# sourceMappingURL=index.d.ts.map

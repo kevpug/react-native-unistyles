@@ -1,11 +1,12 @@
-import { unistyles } from './core'
-import { mq } from './utils'
-import { useInitialTheme } from './hooks'
-import type { UnistylesPlugin, UnistylesValues, ExtractVariantNames } from './types'
-import type { UnistylesThemes, UnistylesBreakpoints } from './global'
-import { ScreenOrientation, AndroidContentSizeCategory, IOSContentSizeCategory } from './common'
-import { useStyles } from './useStyles'
-import { createStyleSheet } from './createStyleSheet'
+import { unistyles } from "./core";
+import { mq } from "./utils";
+import { useInitialTheme } from "./hooks";
+import type { UnistylesPlugin, UnistylesValues, ExtractVariantNames } from "./types";
+import type { UnistylesThemes, UnistylesBreakpoints } from "./global";
+import { ScreenOrientation, AndroidContentSizeCategory, IOSContentSizeCategory } from "./common";
+import { useStyles } from "./useStyles";
+import { createStyleSheet } from "./createStyleSheet";
+import { UnistylesProvider } from "./context";
 
 /**
  * Utility to interact with the Unistyles
@@ -26,27 +27,28 @@ const UnistylesRegistry = {
      * Register additional config to customize the Unistyles
      * @param config - Key value pair of config
      */
-    addConfig: unistyles.registry.addConfig
-}
+    addConfig: unistyles.registry.addConfig,
+};
 
-const UnistylesRuntime = unistyles.runtime
+const UnistylesRuntime = unistyles.runtime;
 
 export {
     mq,
     useStyles,
     useInitialTheme,
+    UnistylesProvider,
     createStyleSheet,
     ScreenOrientation,
     AndroidContentSizeCategory,
     IOSContentSizeCategory,
     UnistylesRegistry,
-    UnistylesRuntime
-}
+    UnistylesRuntime,
+};
 
 export type {
     UnistylesThemes,
     UnistylesBreakpoints,
     UnistylesPlugin,
     UnistylesValues,
-    ExtractVariantNames as UnistylesVariants
-}
+    ExtractVariantNames as UnistylesVariants,
+};
