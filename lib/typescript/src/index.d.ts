@@ -1,10 +1,11 @@
-import { mq } from './utils';
-import { useInitialTheme } from './hooks';
-import type { UnistylesPlugin, UnistylesValues, ExtractVariantNames } from './types';
-import type { UnistylesThemes, UnistylesBreakpoints } from './global';
-import { ScreenOrientation, AndroidContentSizeCategory, IOSContentSizeCategory } from './common';
-import { useStyles } from './useStyles';
-import { createStyleSheet } from './createStyleSheet';
+import { mq } from "./utils";
+import { useInitialTheme } from "./hooks";
+import type { UnistylesPlugin, UnistylesValues, ExtractVariantNames } from "./types";
+import type { UnistylesThemes, UnistylesBreakpoints } from "./global";
+import { ScreenOrientation, AndroidContentSizeCategory, IOSContentSizeCategory } from "./common";
+import { useStyles } from "./useStyles";
+import { createStyleSheet } from "./createStyleSheet";
+import { UnistylesProvider } from "./context";
 /**
  * Utility to interact with the Unistyles
  * (should be called only once)
@@ -72,6 +73,23 @@ declare const UnistylesRegistry: {
     };
 };
 declare const UnistylesRuntime: import("./core").UnistylesRuntime;
-export { mq, useStyles, useInitialTheme, createStyleSheet, ScreenOrientation, AndroidContentSizeCategory, IOSContentSizeCategory, UnistylesRegistry, UnistylesRuntime };
-export type { UnistylesThemes, UnistylesBreakpoints, UnistylesPlugin, UnistylesValues, ExtractVariantNames as UnistylesVariants };
+export {
+    mq,
+    useStyles,
+    UnistylesProvider,
+    useInitialTheme,
+    createStyleSheet,
+    ScreenOrientation,
+    AndroidContentSizeCategory,
+    IOSContentSizeCategory,
+    UnistylesRegistry,
+    UnistylesRuntime,
+};
+export type {
+    UnistylesThemes,
+    UnistylesBreakpoints,
+    UnistylesPlugin,
+    UnistylesValues,
+    ExtractVariantNames as UnistylesVariants,
+};
 //# sourceMappingURL=index.d.ts.map
