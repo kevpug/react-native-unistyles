@@ -7,8 +7,8 @@
     "test:coverage": "jest --coverage",
     "tsc": "node_modules/typescript/bin/tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx",
-    "prepare": "husky && bob build",
-    "precommit": "concurrently 'yarn tsc' 'yarn lint' 'yarn test'",
+    "prepare": "bob build",
+    "precommit": "",
     "release": "release-it"
   },
   "main": "lib/commonjs/index",
