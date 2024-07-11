@@ -1,4 +1,5 @@
 export declare const useUnistyles: () => {
+    plugins: string[];
     theme: never;
     layout: {
         breakpoint: keyof import("..").UnistylesBreakpoints;

@@ -1,8 +1,6 @@
 {
     "root": true,
-    "extends": [
-        "codemask"
-    ],
+    "extends": [],
     "rules": {
         "jsdoc/newline-after-description": 0,
         "@typescript-eslint/no-explicit-any": 0,
@@ -14,7 +12,5 @@
         "no-underscore-dangle": 0,
         "max-lines": 0
     },
-    "ignorePatterns": [
-        "examples/vision/visionos"
-    ]
+    "ignorePatterns": ["examples/vision/visionos"]
 }

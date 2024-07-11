@@ -9,7 +9,7 @@ import { ThemeContext } from "../context";
 const unistylesEvents = new NativeEventEmitter(NativeModules.Unistyles);
 
 export const useUnistyles = () => {
-    // const [plugins, setPlugins] = useState(unistyles.runtime.enabledPlugins);
+    const [plugins, setPlugins] = useState(unistyles.runtime.enabledPlugins);
     const theme = useContext(ThemeContext);
     const [contentSizeCategory, setContentSizeCategory] = useState(unistyles.runtime.contentSizeCategory);
     const [layout, setLayout] = useState({
@@ -50,9 +50,9 @@ export const useUnistyles = () => {
                         navigationBar: layoutEvent.payload.navigationBar,
                     });
                 }
-                // case UnistylesEventType.Plugin: {
-                //     return setPlugins(unistyles.runtime.enabledPlugins);
-                // }
+                case UnistylesEventType.Plugin: {
+                    return setPlugins(unistyles.runtime.enabledPlugins);
+                }
                 case UnistylesEventType.DynamicTypeSize: {
                     const dynamicTypeSizeEvent = event as UnistylesDynamicTypeSizeEvent;
 
@@ -67,7 +67,7 @@ export const useUnistyles = () => {
     }, []);
 
     return {
-        // plugins,
+        plugins,
         theme,
         layout,
         contentSizeCategory,

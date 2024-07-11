@@ -23,7 +23,7 @@ export const useStyles = <ST extends StyleSheetWithSuperPowers>(
     stylesheet?: ST,
     variantsMap?: ExtractVariantNames<typeof stylesheet>
 ): ParsedStylesheet<ST> => {
-    const { theme, layout } = useUnistyles();
+    const { theme, layout, plugins } = useUnistyles();
     const variants = useVariants(variantsMap);
     const parsedStyles = useMemo(
         () => (typeof stylesheet === "function" ? stylesheet(theme, unistyles.runtime.miniRuntime) : stylesheet),
@@ -48,7 +48,7 @@ export const useStyles = <ST extends StyleSheetWithSuperPowers>(
                     ),
                 });
             }, {}),
-        [parsedStyles, variants, layout]
+        [parsedStyles, variants, layout, plugins]
     );
 
     useCSS(dynamicStyleSheet as ReactNativeStyleSheet<ST>);
