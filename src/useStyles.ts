@@ -1,11 +1,12 @@
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 import { StyleSheet } from "react-native";
 import { parseStyle, proxifyFunction, withPlugins } from "./utils";
-import { useCSS, useUnistyles, useVariants } from "./hooks";
+import { useCSS, useVariants } from "./hooks";
 import type { UnistylesBreakpoints } from "./global";
 import type { ExtractVariantNames, ReactNativeStyleSheet, StyleSheetWithSuperPowers, UnistylesTheme } from "./types";
 import { unistyles } from "./core";
 import { isWeb } from "./common";
+import { UnistylesContext } from "./context";
 
 type ParsedStylesheet<ST extends StyleSheetWithSuperPowers> = {
     theme: UnistylesTheme;
@@ -23,7 +24,7 @@ export const useStyles = <ST extends StyleSheetWithSuperPowers>(
     stylesheet?: ST,
     variantsMap?: ExtractVariantNames<typeof stylesheet>
 ): ParsedStylesheet<ST> => {
-    const { theme, layout, plugins } = useUnistyles();
+    const { theme, layout, plugins } = useContext(UnistylesContext);
     const variants = useVariants(variantsMap);
     const parsedStyles = useMemo(
         () => (typeof stylesheet === "function" ? stylesheet(theme, unistyles.runtime.miniRuntime) : stylesheet),

@@ -1,6 +1,10 @@
+# Changes from this fork
+
+-   Used a context instead of a local state variable for every useStyles
+-   Added a UnistylesProvider which you wrap your app within and everything should work as before.
+
 [<img alt="react-native-unistyles" src="assets/banner.png">](https://reactnativeunistyles.vercel.app/)
 [<img alt="react-native-unistyles-3.0" src="assets/v3.jpg">](https://github.com/jpudysz/react-native-unistyles/discussions/191)
-
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/jpudysz/react-native-unistyles?style=for-the-badge)
 [![npm downloads](https://img.shields.io/npm/dm/react-native-unistyles?style=for-the-badge)](https://www.npmjs.com/package/react-native-unistyles)
@@ -18,12 +22,12 @@
 [![platform - windows](https://img.shields.io/badge/windows-00a2ed?logo=windows&style=for-the-badge)](https://microsoft.github.io/react-native-windows/docs/getting-started)
 [![platform - ssr](https://img.shields.io/badge/SSR-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 
-
 ## Installation
 
 ```shell
 yarn add react-native-unistyles
 ```
+
 Install CocoaPods dependencies / generate native folders with Expo:
 
 ```shell
@@ -32,25 +36,27 @@ npx expo prebuild
 ```
 
 ## [Documentation](https://reactnativeunistyles.vercel.app/)
-- [Start here](https://reactnativeunistyles.vercel.app/start/introduction/)
-- [API](https://reactnativeunistyles.vercel.app/reference/create-stylesheet/)
-- [Migration from StyleSheet](https://reactnativeunistyles.vercel.app/start/migration-from-stylesheet/)
-- [Examples](https://reactnativeunistyles.vercel.app/examples/all/)
+
+-   [Start here](https://reactnativeunistyles.vercel.app/start/introduction/)
+-   [API](https://reactnativeunistyles.vercel.app/reference/create-stylesheet/)
+-   [Migration from StyleSheet](https://reactnativeunistyles.vercel.app/start/migration-from-stylesheet/)
+-   [Examples](https://reactnativeunistyles.vercel.app/examples/all/)
 
 ## Features
-- 🚀 Shared core with C++ and JSI bindings
-- 🌉 Supports new architecture and bridgeless mode
-- 🔥 Crazy performance, adds under 0.1 ms to your StyleSheet
-- 🎳 Share up to 100% of your styles across platforms in monorepo
-- 🎯 Doesn't introduce new components, everything is packed in one hook
-- ⚛️ No React Context, no React Native events
-- 🖥️ Supports custom breakpoints, css-like media queries and variants
-- 🎨 Register multiple themes and change them with single function call
-- 🥳 Compatible with all React Native platforms
-- 🛡️ ~99% Test coverage
-- 🔌 Extend stylesheets with your own plugins
-- ⚔️ No 3rd party dependencies
-- and much much more!
+
+-   🚀 Shared core with C++ and JSI bindings
+-   🌉 Supports new architecture and bridgeless mode
+-   🔥 Crazy performance, adds under 0.1 ms to your StyleSheet
+-   🎳 Share up to 100% of your styles across platforms in monorepo
+-   🎯 Doesn't introduce new components, everything is packed in one hook
+-   ⚛️ No React Context, no React Native events
+-   🖥️ Supports custom breakpoints, css-like media queries and variants
+-   🎨 Register multiple themes and change them with single function call
+-   🥳 Compatible with all React Native platforms
+-   🛡️ ~99% Test coverage
+-   🔌 Extend stylesheets with your own plugins
+-   ⚔️ No 3rd party dependencies
+-   and much much more!
 
 ## Sponsors
 
@@ -71,7 +77,6 @@ npx expo prebuild
 <a href="https://github.com/mwarger">
      <img src="https://avatars.githubusercontent.com/u/686823?v=4" height="70px" width="70px" alt="mwarger" />
 </a>
-
 
 ## Past sponsors
 
@@ -101,7 +106,6 @@ Ko-fi: https://ko-fi.com/jpudysz
 
 Your support is greatly appreciated and helps me dedicate more time and resources to creating quality libraries. Thank you for all the support!
 
-
 ## UI Kits
 
 <a href="https://stacks.grapp.dev/">
@@ -109,10 +113,10 @@ Your support is greatly appreciated and helps me dedicate more time and resource
 </a>
 
 ## Discord
+
 Looking for help or you want to chat with me?
 
 [Join Discord](https://discord.gg/akGHf27P4C)
-
 
 ## License
 
