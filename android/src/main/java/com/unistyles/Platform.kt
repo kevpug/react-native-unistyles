@@ -140,24 +140,7 @@ class Platform(private val reactApplicationContext: ReactApplicationContext) {
         }
 
         val insets = insetsCompat.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout())
-        val imeInsets = insetsCompat.getInsets(WindowInsetsCompat.Type.ime())
-
-        // Android 10 and below - set bottom insets to 0 while keyboard is visible and use default bottom insets otherwise
-        // Android 11 and above - animate bottom insets while keyboard is appearing and disappearing
-        val insetBottom = when(imeInsets.bottom > 0) {
-            true -> {
-                if (Build.VERSION.SDK_INT >= 30 && animatedBottomInsets != null) {
-                    animatedBottomInsets
-                } else {
-                    0
-                }
-            }
-            else -> {
-                insets.bottom
-            }
-        }
-
-        this.insets = Insets(statusBarTopInset, insetBottom, insets.left, insets.right)
+        this.insets = Insets(statusBarTopInset, insets.bottom, insets.left, insets.right)
     }
 
     fun getInsets(): Insets {
