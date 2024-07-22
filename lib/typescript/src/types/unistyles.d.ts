@@ -43,6 +43,7 @@ export type UnistylesBridge = {
     navigationBar: NavigationBar;
     pixelRatio: number;
     fontScale: number;
+    rtl: boolean;
     themes: Array<keyof UnistylesThemes>;
     useBreakpoints(breakpoints: UnistylesBreakpoints): void;
     useTheme(name: keyof UnistylesThemes): void;
@@ -74,11 +75,5 @@ export type UnistylesMobileLayoutEvent = {
 export type UnistylesPluginEvent = {
     type: UnistylesEventType.Plugin;
 };
-export type UnistylesDynamicTypeSizeEvent = {
-    type: UnistylesEventType.DynamicTypeSize;
-    payload: {
-        contentSizeCategory: IOSContentSizeCategory | AndroidContentSizeCategory;
-    };
-};
-export type UnistylesEvents = UnistylesThemeEvent | UnistylesMobileLayoutEvent | UnistylesPluginEvent | UnistylesDynamicTypeSizeEvent;
+export type UnistylesEvents = UnistylesThemeEvent | UnistylesMobileLayoutEvent | UnistylesPluginEvent;
 //# sourceMappingURL=unistyles.d.ts.map

@@ -50,7 +50,6 @@ struct UnistylesModel {
     void emitDeviceEvent(const std::string eventType, EventPayload payload);
     void onThemeChange(std::string themeName);
     void onPluginChange();
-    void onContentSizeCategoryChange(std::string contentSizeCategory);
     void onLayoutChange();
     jsi::Object parseEventPayload(EventPayload payload);
     jsi::Object parseEventNestedPayload(EventNestedValue payload);
@@ -111,6 +110,7 @@ struct UnistylesModel {
     Insets insets = {0, 0, 0, 0};
     float pixelRatio = 1.0;
     float fontScale = 1.0;
+    bool rtl = false;
     std::string colorScheme = UnistylesUnspecifiedScheme;
     std::string contentSizeCategory = UnistylesUnspecifiedScheme;
 

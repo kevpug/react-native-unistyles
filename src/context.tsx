@@ -5,13 +5,12 @@ import type {
     ScreenDimensions,
     ScreenInsets,
     ScreenSize,
-    UnistylesDynamicTypeSizeEvent,
     UnistylesEvents,
     UnistylesMobileLayoutEvent,
     UnistylesTheme,
     UnistylesThemeEvent,
 } from "./types";
-import { UnistylesEventType, type AndroidContentSizeCategory, type IOSContentSizeCategory } from "./common";
+import { UnistylesEventType } from "./common";
 import { NativeEventEmitter, NativeModules } from "react-native";
 
 export type TUnistylesContext = {
@@ -25,7 +24,6 @@ export type TUnistylesContext = {
         breakpoint: keyof UnistylesBreakpoints;
         orientation: "landscape" | "portrait";
     };
-    contentSizeCategory: IOSContentSizeCategory | AndroidContentSizeCategory;
 };
 
 const unistylesEvents = new NativeEventEmitter(NativeModules.Unistyles);
@@ -55,13 +53,11 @@ export const UnistylesContext = React.createContext<TUnistylesContext>({
             right: unistyles.runtime.insets.right,
         },
     },
-    contentSizeCategory: unistyles.runtime.contentSizeCategory,
 });
 
 export const UnistylesProvider = ({ children }: { children: React.ReactNode }) => {
     const [theme, setTheme] = useState(unistyles.registry.getTheme(unistyles.runtime.themeName));
     const [plugins, setPlugins] = useState(unistyles.runtime.enabledPlugins);
-    const [contentSizeCategory, setContentSizeCategory] = useState(unistyles.runtime.contentSizeCategory);
     const [layout, setLayout] = useState({
         breakpoint: unistyles.runtime.breakpoint,
         orientation: unistyles.runtime.orientation,
@@ -108,11 +104,6 @@ export const UnistylesProvider = ({ children }: { children: React.ReactNode }) =
                 case UnistylesEventType.Plugin: {
                     return setPlugins(unistyles.runtime.enabledPlugins);
                 }
-                case UnistylesEventType.DynamicTypeSize: {
-                    const dynamicTypeSizeEvent = event as UnistylesDynamicTypeSizeEvent;
-
-                    return setContentSizeCategory(dynamicTypeSizeEvent.payload.contentSizeCategory);
-                }
                 default:
                     return;
             }
@@ -120,9 +111,5 @@ export const UnistylesProvider = ({ children }: { children: React.ReactNode }) =
 
         return subscription.remove;
     }, []);
-    return (
-        <UnistylesContext.Provider value={{ theme, layout, contentSizeCategory, plugins }}>
-            {children}
-        </UnistylesContext.Provider>
-    );
+    return <UnistylesContext.Provider value={{ theme, layout, plugins }}>{children}</UnistylesContext.Provider>;
 };

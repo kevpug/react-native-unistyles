@@ -31,12 +31,19 @@ export declare class UnistylesRuntime {
         orientation: "landscape" | "portrait";
         pixelRatio: number;
         fontScale: number;
+        hairlineWidth: number;
+        rtl: boolean;
     };
     /**
      * Get the current color scheme
      * @returns - The current color scheme
      */
     get colorScheme(): import("../types").ColorSchemeName;
+    /**
+     * Get the layout direction
+     * @returns - Boolean indicating if the layout direction is RTL
+     */
+    get rtl(): boolean;
     /**
      * Get info about adaptive themes
      * @returns - boolean indicating if the adaptive themes are enabled
@@ -64,6 +71,7 @@ export declare class UnistylesRuntime {
     get breakpoints(): import("../global").UnistylesBreakpoints;
     /**
      * Get the names of currently enabled plugins
+     * @deprecated - Plugins will be removed in the next major release
      * @returns - The names of currently enabled plugins
      */
     get enabledPlugins(): string[];
@@ -116,6 +124,11 @@ export declare class UnistylesRuntime {
      */
     get fontScale(): number;
     /**
+     * Get the hairline width
+     * @returns - The thinnest width of the platform
+     */
+    get hairlineWidth(): number;
+    /**
      * Get the immersive mode (both status bar and navigation bar hidden (Android))
      * @param isEnabled
      */
@@ -146,11 +159,13 @@ export declare class UnistylesRuntime {
     setAdaptiveThemes: (enable: boolean) => void;
     /**
      * Enable a plugin
+     * @deprecated - Plugins will be removed in the next major release
      * @param plugin - Plugin that conforms to UnistylesPlugin interface
      */
     addPlugin: (plugin: UnistylesPlugin) => void;
     /**
      * Disable a plugin
+     * @deprecated - Plugins will be removed in the next major release
      * @param plugin - Plugin that conforms to UnistylesPlugin interface
      */
     removePlugin: (plugin: UnistylesPlugin) => void;

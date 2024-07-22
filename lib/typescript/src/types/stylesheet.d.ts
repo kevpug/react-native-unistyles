@@ -3,9 +3,9 @@ import type { ShadowOffset, TransformStyles, UnistylesTheme } from './core';
 import type { UnistylesBreakpoints } from '../global';
 import type { UnistylesMiniRuntime } from '../core';
 type NestedKeys = 'shadowOffset' | 'transform' | 'textShadowOffset';
-type UnistyleView = Omit<ViewStyle, NestedKeys>;
-type UnistyleText = Omit<TextStyle, NestedKeys>;
-type UnistyleImage = Omit<ImageStyle, NestedKeys>;
+export type UnistyleView = Omit<ViewStyle, NestedKeys>;
+export type UnistyleText = Omit<TextStyle, NestedKeys>;
+export type UnistyleImage = Omit<ImageStyle, NestedKeys>;
 type UnistyleNestedStyles = {
     shadowOffset?: ToDeepUnistyles<ShadowOffset>;
     textShadowOffset?: ToDeepUnistyles<ShadowOffset>;

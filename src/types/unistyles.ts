@@ -50,7 +50,8 @@ export type UnistylesBridge = {
     statusBar: StatusBar,
     navigationBar: NavigationBar,
     pixelRatio: number,
-    fontScale: number
+    fontScale: number,
+    rtl: boolean
 
     // setters
     themes: Array<keyof UnistylesThemes>,
@@ -90,11 +91,4 @@ export type UnistylesPluginEvent = {
     type: UnistylesEventType.Plugin
 }
 
-export type UnistylesDynamicTypeSizeEvent = {
-    type: UnistylesEventType.DynamicTypeSize,
-    payload: {
-        contentSizeCategory: IOSContentSizeCategory | AndroidContentSizeCategory
-    }
-}
-
-export type UnistylesEvents = UnistylesThemeEvent | UnistylesMobileLayoutEvent | UnistylesPluginEvent | UnistylesDynamicTypeSizeEvent
+export type UnistylesEvents = UnistylesThemeEvent | UnistylesMobileLayoutEvent | UnistylesPluginEvent

@@ -37,8 +37,7 @@ export declare enum AndroidContentSizeCategory {
 export declare enum UnistylesEventType {
     Theme = "theme",
     Layout = "layout",
-    Plugin = "plugin",
-    DynamicTypeSize = "dynamicTypeSize"
+    Plugin = "plugin"
 }
 export declare enum UnistylesError {
     RuntimeUnavailable = "Unistyles runtime is not available. Make sure you followed the installation instructions",

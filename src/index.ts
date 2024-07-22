@@ -1,7 +1,14 @@
 import { unistyles } from "./core";
 import { mq } from "./utils";
 import { useInitialTheme } from "./hooks";
-import type { UnistylesPlugin, UnistylesValues, ExtractVariantNames } from "./types";
+import type {
+    UnistylesPlugin,
+    UnistylesValues,
+    UnistyleText,
+    UnistyleView,
+    UnistyleImage,
+    ExtractVariantNames,
+} from "./types";
 import type { UnistylesThemes, UnistylesBreakpoints } from "./global";
 import { ScreenOrientation, AndroidContentSizeCategory, IOSContentSizeCategory } from "./common";
 import { useStyles } from "./useStyles";
@@ -50,5 +57,8 @@ export type {
     UnistylesBreakpoints,
     UnistylesPlugin,
     UnistylesValues,
+    UnistyleText,
+    UnistyleView,
+    UnistyleImage,
     ExtractVariantNames as UnistylesVariants,
 };

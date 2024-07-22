@@ -112,6 +112,10 @@ Your support is greatly appreciated and helps me dedicate more time and resource
      <img src="https://raw.githubusercontent.com/grapp-dev/stacks/main/assets/stacks-logo.png" height="70px" width="70px" alt="Stacks" />
 </a>
 
+## Plugins
+
+[eslint-plugin-react-native-unistyles](https://github.com/RodSarhan/eslint-plugin-react-native-unistyles)
+
 ## Discord
 
 Looking for help or you want to chat with me?

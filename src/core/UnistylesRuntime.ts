@@ -2,7 +2,7 @@ import { ScreenOrientation, UnistylesError } from '../common'
 import type { Color, UnistylesBridge, UnistylesPlugin } from '../types'
 import type { UnistylesThemes } from '../global'
 import type { UnistyleRegistry } from './UnistyleRegistry'
-import { parseColor } from '../utils'
+import { parseColor } from '../utils/parseColor'
 
 /**
  * Utility to interact with the Unistyles during runtime
@@ -30,7 +30,9 @@ export class UnistylesRuntime {
             },
             orientation: this.orientation,
             pixelRatio: this.pixelRatio,
-            fontScale: this.fontScale
+            fontScale: this.fontScale,
+            hairlineWidth: this.hairlineWidth,
+            rtl: this.rtl
         }
     }
 
@@ -40,6 +42,14 @@ export class UnistylesRuntime {
      */
     public get colorScheme() {
         return this.unistylesBridge.colorScheme
+    }
+
+    /**
+     * Get the layout direction
+     * @returns - Boolean indicating if the layout direction is RTL
+     */
+    public get rtl() {
+        return this.unistylesBridge.rtl
     }
 
     /**
@@ -84,6 +94,7 @@ export class UnistylesRuntime {
 
     /**
      * Get the names of currently enabled plugins
+     * @deprecated - Plugins will be removed in the next major release
      * @returns - The names of currently enabled plugins
      */
     public get enabledPlugins() {
@@ -174,6 +185,17 @@ export class UnistylesRuntime {
     }
 
     /**
+     * Get the hairline width
+     * @returns - The thinnest width of the platform
+     */
+    public get hairlineWidth() {
+        const pixelRatio = this.pixelRatio
+        const nearestPixel = Math.trunc(pixelRatio * 0.4) || 1
+
+        return nearestPixel / pixelRatio
+    }
+
+    /**
      * Get the immersive mode (both status bar and navigation bar hidden (Android))
      * @param isEnabled
      */
@@ -231,6 +253,7 @@ export class UnistylesRuntime {
 
     /**
      * Enable a plugin
+     * @deprecated - Plugins will be removed in the next major release
      * @param plugin - Plugin that conforms to UnistylesPlugin interface
      */
     public addPlugin = (plugin: UnistylesPlugin) => {
@@ -239,6 +262,7 @@ export class UnistylesRuntime {
 
     /**
      * Disable a plugin
+     * @deprecated - Plugins will be removed in the next major release
      * @param plugin - Plugin that conforms to UnistylesPlugin interface
      */
     public removePlugin = (plugin: UnistylesPlugin) => {

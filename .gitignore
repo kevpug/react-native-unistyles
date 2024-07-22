@@ -79,3 +79,4 @@ android/keystores/debug.keystore
 docs/.yarn
 coverage
 docs/dist
+yarn.lock

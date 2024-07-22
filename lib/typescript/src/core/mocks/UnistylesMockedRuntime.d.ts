@@ -30,12 +30,15 @@ export declare class UnistylesMockedRuntime {
         orientation: "portrait";
         pixelRatio: number;
         fontScale: number;
+        hairlineWidth: number;
+        rtl: boolean;
     };
     get colorScheme(): string;
     get hasAdaptiveThemes(): boolean;
     get themeName(): undefined;
     get contentSizeCategory(): string;
     get breakpoint(): number | keyof import("../../global").UnistylesBreakpoints | undefined;
+    get rtl(): boolean;
     get breakpoints(): import("../../global").UnistylesBreakpoints;
     get enabledPlugins(): UnistylesPlugin[];
     get screen(): {
@@ -49,6 +52,7 @@ export declare class UnistylesMockedRuntime {
         left: number;
     };
     get pixelRatio(): number;
+    get hairlineWidth(): number;
     get fontScale(): number;
     get statusBar(): {
         height: number;
